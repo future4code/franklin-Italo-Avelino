@@ -52,9 +52,17 @@ function Post(props){
   const [curtido, setCurtido] = useState(false)
   const [comentando, setComentando] = useState(false)
   const [numeroComentarios, setNumeroComentarios] = useState(0)
+  const [inputComentario, setInputComentario] = useState('')
 
   const onClickCurtida = () => {
-    console.log('Curtiu!')
+    setCurtido(!curtido)
+    if(curtido) {
+      iconeCurtida = iconeCoracaoPreto
+      setnumeroCurtidas(numeroCurtidas - 1);
+    } else {
+      iconeCurtida = iconeCoracaoBranco
+      setnumeroCurtidas(numeroCurtidas + 1);
+    }
   }
   
   const onClickComentario = () => {
@@ -68,21 +76,32 @@ function Post(props){
   const aoEnviarComentario = () => {
     setComentando(false)
     setNumeroComentarios(numeroComentarios + 1)
+    setInputComentario('')
+  }
+
+  const handleInputComentario = (event) => {
+    setInputComentario(event.target.value)
   }
 
   let iconeCurtida
 
-    if(curtido) {
-      iconeCurtida = iconeCoracaoPreto
-    } else {
-      iconeCurtida = iconeCoracaoBranco
-    }
+  if(curtido) {
+    iconeCurtida = iconeCoracaoPreto
+  } else {
+    iconeCurtida = iconeCoracaoBranco
+  }
 
-    let componenteComentario
+  console.log(inputComentario)
 
-    if(comentando) {
-      componenteComentario = <SecaoComentario aoEnviar={aoEnviarComentario}/>
-    }
+  let componenteComentario
+
+  if(comentando) {
+    componenteComentario = <SecaoComentario
+    value={inputComentario}
+    aoEnviar={aoEnviarComentario}
+    onChangeComentario={handleInputComentario}
+    />
+  }
 
   return(
     <PostContainer>
@@ -97,7 +116,7 @@ function Post(props){
         <IconeComContador
           icone={iconeCurtida}
           onClickIcone={onClickCurtida}
-          valorContador={state.numeroCurtidas}
+          valorContador={numeroCurtidas}
         />
 
         <IconeComContador

@@ -16,7 +16,7 @@ export function SecaoComentario(props) {
 		<CommentContainer>
 			<InputComentario
 				placeholder={'Comentário'}
-				value={''}
+				value={props.value}
 				onChange={props.onChangeComentario}
 			/>
 			<button onClick={props.aoEnviar}>Enviar</button>
