@@ -7,7 +7,7 @@ const Input = styled.input`
 
 function InputText(props) {
     return(
-        <Input type='text' placeholder={props.placeholder}/>
+        <Input value={props.value} onChange={props.onchange} placeholder={props.placeholder} style={props.width}/>
     );
 };
 

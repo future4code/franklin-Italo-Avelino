@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import React from 'react';
+import React, {useState} from 'react';
 import InputText from '../InputText/InputText';
 import Button from '../Button/Button';
 
@@ -18,29 +18,59 @@ const Chat = styled.div`
 `
 
 const Messages = styled.div`
-
-`
-
-const InputsChat = styled.div`
-
+    padding: 20px
 `
 
 function BodyChat() {
+    const [listMessage, setListMessage] = useState([{}]);
+
+    const sendMessage = () =>{
+        const newMessage = {
+            name: inputNameValue,
+            content: inputContentValue
+        }
+
+        setListMessage([...listMessage, newMessage])
+    }
+
+    const [inputNameValue, setInputNameValue] = useState("")
+    const [inputContentValue, setInputContentValue] = useState("")
+
+    const inputNameOnChange = (event) => {
+        setInputNameValue(event.target.value)
+    }
+
+    const inputContentOnChange = (event) => {
+        setInputContentValue(event.target.value)
+    }
+
+    const displayMessage = listMessage.map((message) => {
+        if(message.name !== undefined)
+            return <p><b>{message.name}</b>: {message.content}</p>;
+    })
+
     return (
         <Tela>
             <Chat>
-                <Messages/>
-                <InputsChat>
+                <Messages>
+                    {displayMessage}
+                </Messages>
+                <div>
                     <InputText
+                        value={inputNameValue}
+                        onchange={inputNameOnChange}
                         placeholder="Usuário"
                     />
                     <InputText
+                        value={inputContentValue}
+                        onchange={inputContentOnChange}
                         placeholder="Mensagem"
                     />
                     <Button
+                        onclick={sendMessage}
                         message="Enviar"
                     />
-                </InputsChat>
+                </div>
             </Chat>
         </Tela>
     );
