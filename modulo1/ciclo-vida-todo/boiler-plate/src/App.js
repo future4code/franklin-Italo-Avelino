@@ -27,7 +27,7 @@ function App() {
     },
     {
       id: Date.now(),
-      texto: 'Estudar GraphQL',
+      texto: 'Estudar Banco de dados',
       completa: true
     }
   ]);
