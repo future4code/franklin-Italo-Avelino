@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components"
+import {useNavigate} from "react-router-dom"
 
 const WrapperButton = styled.button`
     color: grey;
@@ -12,7 +13,10 @@ const WrapperButton = styled.button`
 `
 
 export const Button = (props) => {
+  const navigate = useNavigate()
+
   return (
-    <WrapperButton onClick={props.onClick}>{props.text}</WrapperButton>
+    <WrapperButton onClick={() => navigate(props.rota)}>{props.text}
+    </WrapperButton>
   );
 }

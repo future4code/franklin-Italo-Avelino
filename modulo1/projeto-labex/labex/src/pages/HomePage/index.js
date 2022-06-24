@@ -23,8 +23,14 @@ export const HomePage = () => {
     <Flex>
       <TitleText text={"Via Labenu"} />
       <WrapperButtons>
-        <Button text={"Ver viagens"}/>
-        <Button text={"Aréa admin"}/>
+        <Button
+          text={"Ver viagens"}
+          rota={"lista"}
+        />
+        <Button
+          text={"Aréa admin"}
+          rota={"administrador"}
+        />
       </WrapperButtons>
     </Flex>
   );

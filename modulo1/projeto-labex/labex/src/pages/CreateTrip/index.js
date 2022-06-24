@@ -29,7 +29,10 @@ export const CreateTrip = () => {
       <Input placeholder={"Descrição da viagem"}/>
       <Input placeholder={"Duração da viagem"}/>
       <WrapperButtons>
-        <Button text={"Voltar"}/>
+        <Button
+          text={"Voltar"}
+          rota={-1}
+        />
         <Button text={"Criar viagem"}/>
       </WrapperButtons>
     </Flex>

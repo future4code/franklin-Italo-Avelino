@@ -2,7 +2,6 @@ import React from "react";
 import styled from "styled-components";
 import { Button } from "../../components/Button";
 import { Candidate } from "../../components/Candidate";
-import { Input } from "../../components/Input";
 import { TitleText } from "../../components/TitleTextComponent";
 import { TripCard } from "../../components/TripCard";
 
@@ -34,7 +33,10 @@ export const TripDatailsPage = () => {
     <div>
       <Flex>
       <WrapperButtons>
-        <Button text={"Voltar"} />
+        <Button
+          text={"Voltar"}
+          rota={-1}
+        />
       </WrapperButtons>
       <TitleText text={"Detalhes de uma viagem"}/>
       <SelectTrip as="select">

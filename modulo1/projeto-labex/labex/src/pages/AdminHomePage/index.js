@@ -23,8 +23,14 @@ export const AdminHomePage = () => {
     <Flex>
       <TitleText text={"Aréa do administrador"} />
       <WrapperButtons>
-        <Button text={"Criar uma viagem"}/>
-        <Button text={"Detalhes de uma viagem"}/>
+        <Button
+          text={"Criar uma viagem"}
+          rota={"criar"}
+        />
+        <Button
+          text={"Detalhes de uma viagem"}
+          rota={"detalhes"}
+        />
       </WrapperButtons>
     </Flex>
   );

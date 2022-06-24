@@ -45,7 +45,10 @@ export const ApplicationFormPage = () => {
       <Input placeholder={"Profissão"}/>
       <Input placeholder={"País"}/>
       <WrapperButtons>
-        <Button text={"Voltar"} />
+        <Button
+          text={"Voltar"}
+          rota={-1}
+        />
         <Button text={"Enviar"} />
       </WrapperButtons>
     </Flex>

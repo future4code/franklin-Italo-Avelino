@@ -21,8 +21,14 @@ export const ListTripsPage = () => {
   return (
     <Flex>
       <WrapperButtons>
-        <Button text={"Voltar"} />
-        <Button text={"Inscrever-se"} />
+        <Button
+          text={"Voltar"}
+          rota={-1}
+        />
+        <Button
+          text={"Inscrever-se"}
+          rota={"formulario"}
+        />
       </WrapperButtons>
       <TitleText text={"Viagens disponiveis"}/>
       <TripCard
