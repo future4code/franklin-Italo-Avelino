@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { Button } from "../../components/Button";
+import { ButtonNavegation } from "../../components/ButtonNavegation";
 import { Input } from "../../components/Input";
 import { TitleText } from "../../components/TitleTextComponent";
 
@@ -26,8 +26,8 @@ export const LoginPage = () => {
       <Input placeholder={"E-mail"}/>
       <Input placeholder={"Senha"}/>
       <WrapperButtons>
-        <Button text={"Voltar"} />
-        <Button text={"Inscrever-se"} />
+        <ButtonNavegation text={"Voltar"} />
+        <ButtonNavegation text={"Inscrever-se"} />
       </WrapperButtons>
     </Flex>
   );

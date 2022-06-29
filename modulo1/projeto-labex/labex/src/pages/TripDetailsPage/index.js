@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { Button } from "../../components/Button";
+import { ButtonNavegation } from "../../components/ButtonNavegation";
 import { Candidate } from "../../components/Candidate";
 import { TitleText } from "../../components/TitleTextComponent";
 import { TripCard } from "../../components/TripCard";
@@ -33,7 +33,7 @@ export const TripDatailsPage = () => {
     <div>
       <Flex>
       <WrapperButtons>
-        <Button
+        <ButtonNavegation
           text={"Voltar"}
           rota={-1}
         />

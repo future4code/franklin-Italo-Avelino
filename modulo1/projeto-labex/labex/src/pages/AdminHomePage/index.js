@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { Button } from "../../components/Button";
+import { ButtonNavegation } from "../../components/ButtonNavegation";
 import { TitleText } from "../../components/TitleTextComponent";
 
 const Flex = styled.div`
@@ -23,11 +23,11 @@ export const AdminHomePage = () => {
     <Flex>
       <TitleText text={"Aréa do administrador"} />
       <WrapperButtons>
-        <Button
+        <ButtonNavegation
           text={"Criar uma viagem"}
           rota={"criar"}
         />
-        <Button
+        <ButtonNavegation
           text={"Detalhes de uma viagem"}
           rota={"detalhes"}
         />

@@ -17,7 +17,7 @@ const TripInfo = styled.p`
 
 export const TripCard = (props) => {
   return (
-    <WrapperCard>
+    <WrapperCard key={props.id}>
         <TripInfo>
             <TextBold>Nome:</TextBold> {props.name}
         </TripInfo>

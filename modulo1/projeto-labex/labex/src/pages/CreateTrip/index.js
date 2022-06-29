@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { Button } from "../../components/Button";
+import { ButtonNavegation } from "../../components/ButtonNavegation";
 import { Input } from "../../components/Input";
 import { TitleText } from "../../components/TitleTextComponent";
 
@@ -29,11 +29,11 @@ export const CreateTrip = () => {
       <Input placeholder={"Descrição da viagem"}/>
       <Input placeholder={"Duração da viagem"}/>
       <WrapperButtons>
-        <Button
+        <ButtonNavegation
           text={"Voltar"}
           rota={-1}
         />
-        <Button text={"Criar viagem"}/>
+        <ButtonNavegation text={"Criar viagem"}/>
       </WrapperButtons>
     </Flex>
   );

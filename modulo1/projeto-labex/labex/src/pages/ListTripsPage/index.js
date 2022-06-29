@@ -1,8 +1,9 @@
 import React from "react";
-import { Button } from "../../components/Button";
+import { ButtonNavegation } from "../../components/ButtonNavegation";
 import styled from "styled-components"
 import { TitleText } from "../../components/TitleTextComponent";
 import { TripCard } from "../../components/TripCard";
+import { useRequestData } from "../../hooks/useRequestData";
 
 const WrapperButtons = styled.div`
   margin-top: 4rem;
@@ -18,26 +19,36 @@ const Flex = styled.div`
 `
 
 export const ListTripsPage = () => {
+    const [data, isLoading, error] = useRequestData("https://us-central1-labenu-apis.cloudfunctions.net/labeX/italo-avelino-franklin/trips")
+
+    const tripsList = data && data.trips.map((trip) => {
+      return(
+        <TripCard
+          key={trip.id}
+          name={trip.name} 
+          description={trip.description}
+          planet={trip.planet}
+          duration={trip.durationInDays}
+          date={trip.date}
+        />
+      )
+    })
+
   return (
     <Flex>
       <WrapperButtons>
-        <Button
+        <ButtonNavegation
           text={"Voltar"}
           rota={-1}
         />
-        <Button
+        <ButtonNavegation
           text={"Inscrever-se"}
           rota={"formulario"}
         />
       </WrapperButtons>
       <TitleText text={"Viagens disponiveis"}/>
-      <TripCard
-        name={"Multi luau em Jupiter"} 
-        description={"Noite mágica, com vista para as 69 luas de Jupiter"}
-        planet={"Jupiter"}
-        duration={540}
-        date={"21/12/20"}
-      />
+      {isLoading && <TitleText text={"Carregando..."} />}
+      {!isLoading && tripsList}
     </Flex>
   );
 }
